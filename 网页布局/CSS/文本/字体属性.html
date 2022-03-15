@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            /* 可以选择多种字体，页面选择时依次往后尝试 */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        p {
+            /* 可以选择多种字体，页面选择时依次往后尝试 */
+            /* 字体样式 */
+            font-family: 'Times New Roman', Times, serif;
+            /* 字体大小 */
+            font-size: 25px;
+        }
+
+        .bold {
+            /* 字体粗细 可以用系统的常量 也可以直接写数字 */
+            /* 实际开发中更喜欢使用数字 bold 700加粗 normal 400 不加粗 */
+            font-weight: 700;
+        }
+
+        div {
+            /* 斜体 */
+            font-style: italic;
+
+        }
+
+        em {
+            /* 不斜 */
+            font-style: normal;
+        }
+
+        .complex {
+            /* 内部使用顺序不能变 */
+            /* font: font-style font-weight font-size/line-height font-family; */
+            /* 前面的都可以省略 但是size和family必不能省略 */
+            /* 例如 font: 16px 'Microsoft yahei'; */
+            font: italic 700 16px 'Microsoft yahei';
+        }
+    </style>
+</head>
+
+<body>
+    <h2>字体选择</h2>
+    <p>ksd</p>
+    <p class="bold">加粗</p>
+    <div> 斜体 </div>
+    <em> 不倾斜 </em>
+    <div class="complex">复合样式</div>
+</body>
+
+</html>

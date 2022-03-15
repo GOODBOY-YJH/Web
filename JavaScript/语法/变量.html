@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 跟python变量语法基本相同
+        //变量只声明不赋值 结果是 undefined
+        //不声明直接使用会报错
+        // 不声明直接赋值也可以正常使用
+        //声明
+        var n = 1;
+        var m = 2;
+        // 交换变量
+        var t;
+        t = n;
+        n = m;
+        m = t;
+        console.log(n);
+        console.log(m);
+
+        var names = prompt('请输入名字');
+        alert(names);
+
+        // 数字型 Number
+        // 最大值 Number.MAX_VALUE;
+        // 最小值 Number.MIN_VALUE;
+        // 无穷大 Infinity 负无穷大 -Infinity
+        // NaN; Not a number; 代表非数值
+        // isNaN() 用来判断是否不是数字 不是数字返回true 是数字返回false 
+        console.log(isNaN(m));
+
+        console.log(12 + "" + 12);
+        // typeof m 判断m是什么类型
+        console.log(typeof m);
+
+
+        // 转换为字符串类型 
+        // 1. toString() 函数 
+        // 2. String() 强转
+        // 3. + 加法重载
+
+        //转换为数字类型
+        // parseInt() parseFloat() Number() 强制转换函数
+        //隐式转换 - * / 运算符
+
+        // 转换为布尔型 Boolean() 
+
+        // > < == >= <= != 运算符会默认将数据类型转换为相同
+        // 想要比较全等于需要使用 === 和 ！== 运算符
+
+
+        // 全局变量在script内声明 可以在script内部任何地方使用
+        // 只有在函数内声明的才叫局部变量
+        // js在 es6之后才有块级作用域
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

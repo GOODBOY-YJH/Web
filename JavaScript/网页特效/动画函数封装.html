@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        span {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <span></span>
+    <script>
+        // 利用setInterval函数实现
+        var div = document.querySelector('div');
+        var timer = window.setInterval(function() {
+            if (div.offsetLeft < 300 && div.offsetTop === 0) {
+                div.style.left = div.offsetLeft + 1 + 'px';
+            } else if (div.offsetLeft === 300 && div.offsetTop < 300) {
+                div.style.top = div.offsetTop + 1 + 'px';
+            } else if (div.offsetTop === 300 && div.offsetLeft > 0) {
+                div.style.left = div.offsetLeft - 1 + 'px';
+            } else if (div.offsetLeft === 0 && div.offsetTop > 0) {
+                div.style.top = div.offsetTop - 1 + 'px';
+            }
+        }, 5);
+
+        // 动画函数封装 object 目标对象 target 目标位置
+        function animate(object, target) {
+            // var timer = 换成 object.timer 相当于给object添加了一个属性 而不是额外开辟一个空间 节省内存
+            // 当我们不断点击按钮 元素会越来越快 因为开启了多个定时器
+            // 解决方案就是让元素只有一个定时器执行
+
+            // 先把原先的定时器关掉 再执行新的定时器
+            clearInterval(object.timer);
+            object.timer = window.setInterval(function() {
+                if (object.offsetLeft >= target) {
+                    clearInterval(object.timer);
+                    // 防止到达target之后继续执行下面的语句
+                    return;
+                }
+                object.style.left = object.offsetLeft + 1 + 'px';
+            }, 30);
+        }
+        var span = document.querySelector('span');
+        // 点击按钮调用函数
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            animate(span, 400);
+        });
+    </script>
+</body>
+
+</html>

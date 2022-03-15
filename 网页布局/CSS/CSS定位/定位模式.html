@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定位模式通过position属性值设置 可以分为四个
+        static 静态定位
+        relative 相对定位
+        absolute 绝对定位
+        fixed 固定定位
+        sticky 粘性定位
+        */
+
+        /* 边偏移就是定位到盒子移动到最终位置 有top boyyom left 和 right四个属性 例如：top：80px*/
+
+        /* 1.静态定位 */
+        /* 无定位的意思 没有边偏移 相当于标准流 */
+        /* 选择器 {
+            position: static;
+        } */
+
+        /* 2.相对定位 */
+        /* 1-元素在移动的时候是相对于他原来的位置来说的 */
+        /* 2-虽然盒子移动了，但是原来的位置还继续占有 不脱标继续保留原来的位置 */
+        /* 选择器 {
+            position: relative;
+        } */
+        .box1 {
+            /* 加相对定位 */
+            position: relative;
+            top: 200px;
+            left: 300px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .box2 {
+            /* 不会占用上一个盒子的位置 */
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        /* 3.绝对定位 */
+        /* 1-相对于祖先元素来移动的 */
+        /* 2-如果没有祖先元素或者祖先元素没有定位 则按照浏览器定位 */
+        /* 3-如果父亲没有绝对定位 不受father限制 直接跟浏览器定位 */
+        /* 4-如果父亲有绝对定位 则根据父亲定位 依据最近一级的带有定位的祖先元素为参考点移动位置 */
+        /*5-绝对定位不再占有原先位置（脱标）*/
+
+        /* 使用场景 如果子级使用绝对定位父级则需要相对定位 */
+
+        /* 选择器 {
+            position: absolute;
+        } */
+        /* 没有父亲 */
+        .box3 {
+            /* 不受body限制 直接跟浏览器定位 */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+        }
+
+        /* 有父亲 */
+        .father {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        .box4 {
+            /* 如果父亲没有绝对定位 不受father限制 直接跟浏览器定位 */
+            /* 如果父亲有绝对定位 则根据父亲定位 依据最近一级的带有定位的祖先元素为参考点移动位置 */
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+        }
+
+
+        /* 4.固定定位 */
+        /* 1-以浏览器的可视窗口进行定位 */
+        /* 2-不占有原先的位置 脱标 */
+        /* 选择器 {
+            position: fixed;
+        } */
+        .dj {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+
+        /* 5.粘性定位 */
+        /* 1-以浏览器的可视窗口作为参照点
+        2-粘性定位占有原先的位置
+        3-必须添加top left right bottom其中一个才生效 */
+        /* 选择器 {
+            position: sticky;
+            top: 10px;
+        } */
+        .nav {
+            position: sticky;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">相对定位</div>
+    <div class="box2">相对定位</div>
+    <div class="box3">绝对定位</div>
+    <div class="father">
+        相对定位
+        <div class="box4">绝对定位</div>
+    </div>
+    <div class="dj">
+        <img src="../前半部案例/images/pic.png" alt="">
+    </div>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <div class="nav">我是导航栏</div>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+    <p>请</p>
+</body>
+
+</html>

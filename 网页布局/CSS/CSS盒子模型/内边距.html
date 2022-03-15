@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 盒子边框与内容之间的距离 -->
+    <style>
+        /* padding也会影响盒子的实际大小 额外的内边距会加到盒子上影响盒子的实际大小 */
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 盒子与左边框的距离 top bottom left right*/
+            padding-left: 20px;
+            /* 盒子与上边框的距离 */
+            padding-top: 20px;
+
+            /* 内边距复合写法 */
+            /* 一个值5px 代表上下左右都有5像素边距
+            两个值5px 10px 代表前一个是上下5px 后一个是左右10px
+            三个值代表上 左右 下
+            四个值代表 上 右 下 左 */
+            /* padding: 5px; */
+            /* padding: 5px 10px; */
+            /* padding: 5px 10px 15px; */
+            /* padding: 5px 10px 15px 20px; */
+        }
+
+        /* 不给盒子指定width和heigth padding就不会撑大盒子 */
+        h1 {
+            /* width: 100%; */
+            /* 我自己测试的可以撑开height不会撑开width */
+            height: 200px;
+            background-color: gray;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>内容与盒子边框的距离</div>
+    <h1></h1>
+</body>
+
+</html>

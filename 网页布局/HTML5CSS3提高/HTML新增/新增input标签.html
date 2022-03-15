@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 可以修改表单里的颜色 */
+        
+        input::placeholder {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    type="email" 限制用户输入必须为email 类型 
+    type="url" 限制用户输入必须为 url 类型 
+    type="date" 限制用户输入必须为 date 类型 
+    type="time" 限制用户输入必须为 时间 类型 
+    type="month" 限制用户输入必须为 月 类型 
+    type="week"限制用户输入必须为 周 类型 
+    type="number"限制用户输入必须为 数字 类型 
+    type="tel" 手机号码
+    type="search"搜索框
+    type="color" 生成一个颜色表单 -->
+    <form action="">
+        <ul>
+            <li> <input type="email"> </li>
+            <li> <input type="url"> </li>
+            <li> <input type="date"> </li>
+            <li> <input type="time"> </li>
+            <li> <input type="month"> </li>
+            <li> <input type="week"> </li>
+            <li> <input type="number"></li>
+            <li> <input type="tel"> </li>
+            <li> <input type="search"></li>
+            <li> <input type="color"> </li>
+            <!-- 我们提交的时候这些标签会验证表单内容是否正确 -->
+            <li><input type="submit" value="提交"></li>
+        </ul>
+    </form>
+
+    <!-- 新增的表单属性 -->
+    <!-- 
+    required="required" 表单内容不能为空 
+    placeholder="提示文本" 提示文本 存在默认值则不显示
+    autofocus="autofocue" 自动聚焦属性 页面加载完自动聚焦到指定表单
+    autocomplete="off/on" 当用户在开始键入是 浏览器基于之前键入的值 应该显示出在字段中填写的选项 需要放在表单内同时加上name属性 同时成功提交
+    multiple="mulpitle" 可以多选文件提交
+    -->
+
+
+</body>
+
+</html>

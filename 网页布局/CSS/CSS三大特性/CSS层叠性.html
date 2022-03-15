@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 出现两个定义取先后原则(后定义的覆盖先定义的) */
+        /* 只会覆盖冲突的，不冲突的不会影响 */
+        div {
+            color: red;
+            font-size: 12px;
+        }
+
+        div {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>原则</div>
+
+</body>
+
+</html>

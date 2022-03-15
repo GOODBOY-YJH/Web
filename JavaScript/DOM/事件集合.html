@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    不要复制我
+    <script>
+        // 1.onclick 鼠标点击
+        // 2. onfocus 获得鼠标焦点 onblur 失去鼠标焦点
+        // 3. 鼠标经过 onmouseover 鼠标离开 onmouseout
+        // 4. onmousemove 鼠标移动触发 onmouseup 鼠标弹起触发 onmousedown 鼠标按下触发
+        // 5. contextmenu 鼠标右键菜单 selectstart  选中
+        document.addEventListener('contextmenu', function(e) {
+            // 禁止右键菜单
+            e.preventDefault();
+        });
+        document.addEventListener('selectstart', function(e) {
+            // 禁止选中文字
+            e.preventDefault();
+        });
+
+        // 键盘事件
+        // onkeyup 键盘松开时触发
+        // document.onkeyup = function() {
+        //     console.log('弹起了');
+        // };
+
+        // document.addEventListener('keyup', function() {
+        //     console.log('弹起了');
+        // });
+        // onkeydown 键盘按下时触发
+        // document.addEventListener('keydown', function() {
+        //     console.log('按下了');
+        // });
+        // onkeypress 键盘按下时触发 但是不能识别功能键 比如ctrl shift等
+        // document.addEventListener('keypress', function() {
+        //     console.log('onkeypress');
+        // });
+    </script>
+</body>
+
+</html>

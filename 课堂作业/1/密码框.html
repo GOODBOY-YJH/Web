@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .div1 {
+            width: 200px;
+            margin: 100px auto;
+            border: 1px solid skyblue;
+            position: relative;
+        }
+        
+        .div1 input {
+            width: 170px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        /* 			#img1{
+				
+			} */
+        
+        .div1 img {
+            width: 24px;
+            position: absolute;
+            top: 8px;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='div1'>
+        <label>
+				<img src="img/error.png" id='img1'/>
+			</label>
+        <input type="password" id='pwd' />
+    </div>
+    <script>
+        //1 获取元素
+        var img1 = document.getElementById('img1');
+        var pwd = document.getElementById('pwd');
+        //点击图片  把密码框变为文本框
+        //事件 onclick事件  事件处理函数
+        //2函数
+        //算法:利用flag标志位,判断如果值是1就切换文本框,flag赋值0
+        //如果值是0就切换为密码框,flag赋值1
+        var flag = 1;
+        //注册事件
+        //js涉及到很多函数 匿名函数
+        img1.onclick = function() {
+                if (flag == 1) {
+                    pwd.type = 'text';
+                    img1.src = 'img/success.png';
+                    flag = 0;
+                } else {
+                    pwd.type = 'password';
+                    img1.src = 'img/error.png';
+                    flag = 1;
+                }
+            }
+            //在事件里调用函数
+    </script>
+</body>
+
+</html>

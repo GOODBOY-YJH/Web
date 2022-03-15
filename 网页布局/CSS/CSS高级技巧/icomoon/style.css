@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ur3stq');
+  src:  url('fonts/icomoon.eot?ur3stq#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ur3stq') format('truetype'),
+    url('fonts/icomoon.woff?ur3stq') format('woff'),
+    url('fonts/icomoon.svg?ur3stq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sad-face:before {
+  content: "\e900";
+}
+.icon-laughing-face:before {
+  content: "\e901";
+}
+.icon-laughing-face1:before {
+  content: "\e902";
+}
+.icon-sad-face1:before {
+  content: "\e903";
+}
+.icon-kissing-face:before {
+  content: "\e904";
+}
+.icon-amused-face-closed-eyes:before {
+  content: "\e905";
+}
+.icon-face-closed-eyes-open-mouth:before {
+  content: "\e906";
+}
+.icon-two-fingers-resize-out:before {
+  content: "\e907";
+}
+.icon-two-fingers-resize-in:before {
+  content: "\e908";
+}
+.icon-one-finger-swipe-up:before {
+  content: "\e909";
+}
+.icon-one-finger-swipe-up1:before {
+  content: "\e90a";
+}
+.icon-document-file-tga:before {
+  content: "\e90b";
+}
+.icon-arduino:before {
+  content: "\e90c";
+  color: #00979d;
+}
+.icon-artstation:before {
+  content: "\e90d";
+  color: #13aff0;
+}
+.icon-aurelia:before {
+  content: "\e90e";
+  color: #ed2b88;
+}
+.icon-azurepipelines:before {
+  content: "\e90f";
+  color: #2560e0;
+}
+.icon-clockify:before {
+  content: "\e910";
+  color: #03a9f4;
+}
+.icon-clojure:before {
+  content: "\e911";
+  color: #5881d8;
+}
+.icon-datacamp:before {
+  content: "\e912";
+  color: #3ac;
+}
+.icon-elasticsearch:before {
+  content: "\e913";
+  color: #005571;
+}
+.icon-freebsd:before {
+  content: "\e914";
+  color: #ab2b28;
+}
+.icon-pacman:before {
+  content: "\e916";
+}

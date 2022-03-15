@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="输入内容">
+    <script>
+        // 获取元素
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        // 注册事件 处理程序
+        btn.onclick = function() {
+            // input.innerHTML('123'); 这个适用于普通盒子
+            // 表单里面的文字内容是通过value来修改的
+            input.value = '改变了';
+            // 点击完成后button禁用 使用disabled 
+            // btn.disabled = true;
+            // 这里this指向的是事件函数的调用者
+            this.disabled = true;
+        }
+    </script>
+
+
+    <div class="box">
+        <input type="password" id="pwd">
+        <label for="">
+            <img src="../../网页布局/HTML/img/Snipaste_2021-07-12_23-20-20.png" alt="" id="eye">
+        </label>
+    </div>
+
+    <script>
+        // 获取元素
+        var flag = 0;
+        var eye = document.querySelector('#eye');
+        var pwd = document.getElementById('pwd');
+        // 注册事件
+        eye.onclick = function() {
+            if (flag == 0) {
+                pwd.type = 'text';
+                eye.src = '../../网页布局/HTML/img/Snipaste_2021-07-12_16-34-14.png';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                eye.src = '../../网页布局/HTML/img/Snipaste_2021-07-12_23-20-20.png';
+                flag = 0;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

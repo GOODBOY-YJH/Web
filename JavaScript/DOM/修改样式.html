@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .change {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用element.style 获得修改元素样式 -->
+    <!-- <div style="width: 100px;"></div> -->
+    <div></div>
+    <input type="text" name="" id="" value="手机">
+    <script>
+        var div = document.querySelector('div');
+        div.onclick = function() {
+            // 这里是行内样式 会覆盖上面的style
+            // div style 里面的属性使用驼峰命名法
+            // div.style..backgroundColor = 'purple'; 或者
+            this.style.backgroundColor = 'purple';
+            this.style.width = '300px';
+            // 点击后隐藏盒子
+            // div.style.display = 'none';
+        }
+
+
+
+
+        var input = document.querySelector('input');
+        input.style.color = '#ccc';
+        // 获得焦点
+        input.onfocus = function() {
+            if (this.value == '手机')
+                this.value = '';
+            //把文本框里面的颜色变黑
+            this.style.color = 'black';
+        };
+        // 失去焦点
+        input.onblur = function() {
+            if (this.value == '')
+                this.value = '手机';
+            // 失去焦点 把里面的文字颜色变浅
+            this.style.color = '#ccc';
+        };
+    </script>
+
+    <div id="aa">修改</div>
+    <script>
+        // 通过className改变样式
+        var div = document.querySelector('#aa');
+        div.onclick = function() {
+            div.className = 'change';
+        }
+    </script>
+</body>
+
+</html>

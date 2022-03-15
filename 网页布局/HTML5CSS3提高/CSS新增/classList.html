@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a b"></div>
+    <script>
+        // classList 可以返回元素的类名
+        var div = document.querySelector('div');
+        // 返回元素内的类名 a b div.classList[0] 取回元素类名
+        console.log(div.classList);
+        // 添加一个类名 是在后面追加类名 不会覆盖以前的类名 className会覆盖以前的类名
+        div.classList.add('类名');
+        // 删除一个类名 
+        div.classList.remove('类名');
+        // 切换类 调用时如果有就取消 如果没有就加上
+        div.classList.toggle('需要切换类名');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .tab {
+            width: 200px;
+            margin: 100px auto;
+        }
+        
+        .tab_list ul {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            background-color: #ccc;
+        }
+        
+        .tab_list ul li {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 30px;
+        }
+        
+        .tab_con div {
+            width: 50px;
+            height: 30px;
+            margin: 0px auto;
+        }
+        
+        .tab_con div {
+            display: none;
+        }
+        
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="red">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+
+        <div class="tab_con">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </div>
+    <script>
+        var lis = document.querySelector('.tab_list').querySelectorAll('li');
+        var divs = document.querySelector('.tab_con').querySelectorAll('.item');
+        // 绑定事件
+        for (var i = 0; i < lis.length; ++i) {
+            // 开始给li设置索引号
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function() {
+                for (var j = 0; j < lis.length; ++j) {
+                    lis[j].className = '';
+                    divs[j].style.display = 'none';
+                }
+                this.className = 'red';
+                var index = this.getAttribute('index');
+                // console.log(index);
+                divs[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

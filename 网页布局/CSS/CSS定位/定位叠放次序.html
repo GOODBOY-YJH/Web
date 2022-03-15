@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 叠放次序 */
+        /* 数值可以是正整数 负整数或0 默认是auto 数值越大盒子越靠上 只有定位盒子才有这个属性 数值后面不能加单位 */
+        /* 选择器 {
+            z-index: 1;
+        } */
+        
+        div {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .box1 {
+            background-color: green;
+            /* 数值越大显示越靠前 */
+            z-index: 1;
+            top: 0px;
+            left: 0px;
+        }
+        
+        .box2 {
+            background-color: red;
+            z-index: 2;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .box3 {
+            background-color: yellow;
+            z-index: 3;
+            top: 100px;
+            left: 100px;
+        }
+        /* 绝对定位的盒子水平居中 */
+        
+        .box4 {
+            position: absolute;
+            /* 先走父元素宽度的一半 */
+            left: 50%;
+            /* 再走自身宽度的一半 实现居中对齐 */
+            margin-left: -100px;
+            /* 先走父元素宽度的一半 */
+            top: 50%;
+            /* 再走自身宽度的一半 实现居中对齐 */
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        /* 给行内元素添加了绝对定位之后 就可以直接设置宽度和高度 */
+        /* 如果给块级元素加了绝对定位 不给宽高就是默认内容的大小 */
+        /* 脱标的盒子不会触发外边界塌陷 */
+        /* 浮动元素不会压住标准流的文字 定位会 */
+        
+        .box5 {
+            /* 清除内外边距 */
+            padding: 0;
+            margin: 0;
+            /* 浮动的元素不会压住下面标准流的文字 */
+            float: left;
+            /* 绝对定位（固定定位） 会压住下面标准流的所有内容 */
+            /* position: absolute; */
+            /* top: 0;
+            left: 0; */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div> -->
+    <div class="box4">4</div>
+    <h1 class="box5"></h1>
+    <p>真的不会压住我吗 我不太相信 快来试试</p>
+</body>
+
+</html>

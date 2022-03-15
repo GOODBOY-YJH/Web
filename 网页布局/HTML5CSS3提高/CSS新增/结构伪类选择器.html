@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 注意前三个E后面有空格 */
+        /* 匹配父元素中第一个子元素
+        E :first-child */
+        /* 匹配父元素中最后一个子元素
+        E :last-child */
+        /* 匹配父元素中第n个子元素
+        n可以是数字 算式 括号里面必须是包含n的算式 n从0开始每次自加1并计算 或关键字 even偶数 odd基数
+        E :child(n) */
+        /* 上面三种会给所有孩子都排序号不同种的孩子使用同一组序号 必须要序号和类型都对应上才选择 */
+        /* 
+        */
+        /* 匹配父元素中指定类型E的第一个元素
+        E:first-of-type */
+        /* 匹配父元素中指定类型E的最后一个元素
+        E:last-of-type  */
+        /* 匹配父元素中指定类型E的第n个个元素
+        E:nth-of-type(n)  */
+        /* 下面三种会给指定的孩子排序号 每一种孩子元素都有从1开始排序的序号 */
+        
+        ul li:first-child {
+            background-color: pink;
+        }
+        
+        ul li:last-child {
+            background-color: yellow;
+        }
+        
+        ul li:nth-child(3) {
+            background-color: green;
+        }
+        /* 这个无法选中第一个li 因为第一个li编号是2 */
+        
+        ul li:nth-child(1) {
+            background-color: greenyellow;
+        }
+        
+        ul li:nth-of-type(1) {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <div>我是混进来的</div>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+</body>
+
+</html>

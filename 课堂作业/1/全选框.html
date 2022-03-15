@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="div">
+
+        <ol style="list-style-type: none;">
+            <li>
+                <input type="checkbox" id="checkAll" name="" title="" />全选
+            </li>
+            <li>
+                <input type="checkbox" name="cb" />
+            </li>
+            <li>
+                <input type="checkbox" name="cb" />
+            </li>
+            <li>
+                <input type="checkbox" name="cb" />
+            </li>
+            <li>
+                <input type="checkbox" name="cb" />
+            </li>
+            <li>
+                <input type="checkbox" name="cb" />
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        var cbAll = document.getElementById('checkAll');
+        var cbs = document.getElementsByName('cb');
+        checkAll.onclick = function() {
+            var checkflag = cbAll.checked;
+            console.log(checkflag);
+            if (checkflag) {
+                for (var i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = true;
+                }
+            } else {
+                for (var i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

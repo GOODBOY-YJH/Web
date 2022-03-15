@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        div {
+            width: 500px;
+            height: 260px;
+            margin: 20px auto;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        span {
+            font-size: 10pt;
+            margin-left: 10px;
+        }
+        
+        .error {
+            color: #FF0000;
+            margin-left: 10px;
+        }
+        
+        .success {
+            color: green;
+            margin-left: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //用户名正则
+            //用户名规则是 可以由字母 数字下划线组成,
+            //长度3-10个字符之间
+            var username = /^[a-zA-Z]\w{2,9}$/;
+            var txt1 = document.getElementById('txt1');
+            var sp1 = document.getElementById('sp1');
+            //失去焦点 onblur
+            txt1.onblur = function() {
+                    var str = txt1.value;
+                    //test方法验证
+                    if (username.test(str)) {
+                        sp1.innerHTML = '用户名输入正确';
+                        sp1.className = 'success';
+                    } else {
+                        sp1.innerHTML = '格式错误，请输入正确的用户名';
+                        sp1.className = 'error';
+                    }
+                }
+                //密码正则
+                //以字母开头，长度在6-15之间，只能包含字母、数字、下划线
+            var psw = /^[a-zA-Z]\w{5,14}$/;
+            var psw2 = document.getElementById('psw2');
+            var sp2 = document.getElementById('sp2');
+            //失去焦点 onblur
+            psw2.onblur = function() {
+                var str = psw2.value;
+                console.log(str);
+                //test方法验证
+                if (psw.test(str)) {
+                    sp2.innerHTML = '密码输入正确';
+                    sp2.className = 'success';
+                } else {
+                    sp2.innerHTML = '格式错误，请输入正确的密码';
+                    sp2.className = 'error';
+                }
+            }
+
+            //手机正则
+            var rg = /^1[3456789]\d{9}$/;
+            var txt3 = document.getElementById('txt3');
+            var sp3 = document.getElementById('sp3');
+            //失去焦点 onblur
+            txt3.onblur = function() {
+                var str = txt3.value;
+                //test方法验证
+                if (rg.test(str)) {
+                    sp3.innerHTML = '手机号输入正确';
+                    sp3.className = 'success';
+                } else {
+                    sp3.innerHTML = '格式错误，请输入正确的手机号';
+                    sp3.className = 'error';
+                }
+            }
+
+            //国内电话正则
+            var phone = /^\d{4}-\d{7}|\d{3}-\d{8}$/;
+            var txt4 = document.getElementById('txt4');
+            var sp4 = document.getElementById('sp4');
+            //失去焦点 onblur
+            txt4.onblur = function() {
+                var str = txt4.value;
+                //test方法验证
+                if (phone.test(str)) {
+                    sp4.innerHTML = '国内电话号码输入正确';
+                    sp4.className = 'success';
+                } else {
+                    sp4.innerHTML = '格式错误，请输入正确的国内的电话号码';
+                    sp4.className = 'error';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h4 style="text-align: center">注 册</h4>
+        <form>
+            <ul>
+                <li>
+                    <input type='text' id='txt1' />
+                    <span id="sp1">请输入用户名</span>
+                </li>
+                <li>
+                    <input type="password" id='psw2' />
+                    <span id="sp2">请输入密码</span>
+                </li>
+                <li>
+                    <input type="text" id='txt3' />
+                    <span id="sp3">请输入手机号</span>
+                </li>
+
+                <li>
+                    <input type="text" id='txt4' />
+                    <span id="sp4">请输入国内电话号码</span>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+
+</html>

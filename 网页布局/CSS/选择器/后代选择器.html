@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 */
+        ol li {
+            color: red;
+        }
+
+        /* 可以嵌套后代 */
+        ol li a {
+            color: rgb(0, 225, 255);
+        }
+
+        /* 可以是任意的组合 */
+        .nav li a {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ol>
+        <li>我是ol 的孩子</li>
+        <li>我是ol 的孩子</li>
+        <li>我是ol 的孩子</li>
+        <li><a href="#">孙子</a></li>
+    </ol>
+    <ul>
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li><a href="#">孙子</a></li>
+        <li><a href="#">孙子</a></li>
+        <li><a href="#">孙子</a></li>
+    </ul>
+    <ul class="nav">
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li>我是ul 的孩子</li>
+        <li><a href="#">孙子</a></li>
+        <li><a href="#">孙子</a></li>
+        <li><a href="#">孙子</a></li>
+    </ul>
+</body>
+
+</html>

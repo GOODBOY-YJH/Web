@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 溢出的文字省略号显示 */
+        /* 1.当行文本溢出省略号显示 */
+        /* 2.多行文本溢出省略号显示 */
+        /* white-space:nowrap 强制显示一行文本 */
+        /* 3.超出部分隐藏 overflow:hidden */
+        /* 4.text-overflow:ellipsis; 文字用省略号代替超出的部分 */
+        /* 单行文本用省略号代替 */
+        .a {
+            width: 150px;
+            height: 80px;
+            background-color: pink;
+            margin: 180px auto;
+            /* 这行意思就是如果文字显示不开就自动换行 */
+            /* white-space: normal; */
+            /* 这行意思就是如果文字显示不开也要强制显示 */
+            white-space: nowrap;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 文字溢出部分用省略号代替 */
+            text-overflow: ellipsis;
+        }
+
+        /* 多行文本用省略号代替 */
+        .b {
+            width: 150px;
+            height: 85px;
+            background-color: pink;
+            margin: 180px auto;
+            /* 这行意思就是如果文字显示不开就自动换行 */
+            white-space: normal;
+            /* 这行意思就是如果文字显示不开也要强制显示不换行 */
+            /* white-space: nowrap; */
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 文字溢出部分用省略号代替 */
+            text-overflow: ellipsis;
+
+            /* 有兼容性问题 适合webkit内核 */
+            /* 弹性伸缩盒子模型展示 */
+            display: -webkit-box;
+            /* 限制一个块元素显示文本的行数 */
+            -webkit-line-clamp: 4;
+            /* 设置或检索伸缩盒子对象的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字
+    </div>
+    <div class="b">
+        我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字我有好多文字
+    </div>
+</body>
+
+</html>
