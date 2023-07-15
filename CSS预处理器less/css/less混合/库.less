@@ -1,0 +1,51 @@
+.juzhong(@w:10px, @h:10px, @c:pink){ // 可以带参数
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: @c;
+    height: @h;
+    width: @w;
+}
+
+
+.traingle(@_, @w, @c){   // 加了@_参数之后，在less里调用函数.traingle(L, @w, @c)会自动加入这部分，类似于继承
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+}
+
+.traingle(L, @w, @c){
+    border-width: @w;
+    border-color: transparent @c transparent transparent ;
+}
+
+.traingle(R, @w, @c){
+    border-width: @w;
+    border-color: transparent transparent transparent @c;
+}
+
+.traingle(T, @w, @c){
+    border-width: @w;
+    border-color: transparent transparent @c transparent;
+}
+
+.traingle(B, @w, @c){
+    border-width: @w;
+    border-color: @c transparent transparent transparent;
+}
+
+.juzhong1{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.juzhong1:hover{
+    background-color: red!important;
+}

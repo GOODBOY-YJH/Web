@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 链接伪类选择器 */
+        /* a:link 选择所有未被访问的链接
+        :visited 选择所有已被访问的链接
+        :hover 选择鼠标指针位于其上的链接
+        :active 选择活动链接(鼠标按下未弹起的链接) */
+
+        /* 请按照顺序书写 */
+
+        /* 必须有实际链接才起作用 链接未#或者空都无作用 */
+        a:link {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* 选择所有已被访问的链接 */
+        a:visited {
+            color: red;
+        }
+
+
+        /* 选择鼠标指针位于其上的链接 */
+        a:hover {
+            color: skyblue;
+        }
+
+        a:active {
+            color: green;
+        }
+
+        /* 一般开发时写成这样就够了 */
+        /* a {
+            color: gray;
+        }
+
+        a:hover {
+            color: blue;
+        } */
+
+        /* 链接选择器也可以使用这种写法 名字:hover */
+        .bg:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../HTML/img/88841115_p0.jpg">已访问过的链接</a>
+    <a href="#">未被访问的链接</a>
+    <a href="http://www.baidu.com">baidu</a>
+    <a href="#" class="bg">链接</a>
+</body>
+
+</html>

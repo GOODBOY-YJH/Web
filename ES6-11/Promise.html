@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实例化Promise对象 类似于try和catch的操作
+        const p = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                // 成功就通过resolve调用下面then的第一个函数
+                // let data = '数据';
+                // // resolve
+                // resolve(data);
+
+                // 失败就通过reject调用下面then的第二个函数
+                // let err = "读取失败";
+                // reject(err);
+            }, 1000);
+        });
+
+        // 调用promise对象的 then方法
+        p.then(function(value) {
+            console.log(value);
+        }, function(reason) {
+            console.log(reason);
+        });
+    </script>
+</body>
+
+</html>

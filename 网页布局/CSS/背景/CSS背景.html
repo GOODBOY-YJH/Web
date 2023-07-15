@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 背景颜色 */
+        
+        h1 {
+            /* 一般情况下背景颜色默认值是transparent(透明)*/
+            width: 100px;
+            height: 100px;
+            /* 默认是透明色background-color: transparent; */
+            background-color: gray;
+        }
+        /* 背景图片 */
+        
+        div {
+            width: 300px;
+            height: 300px;
+            background-image: url(../../HTML/img/Snipaste_2021-07-12_16-34-14.png);
+            background-color: pink;
+            /* 背景平铺设置 默认情况下背景是平铺的 */
+            /* 不平铺 */
+            background-repeat: no-repeat;
+            /* 背景图片沿x轴平铺 */
+            /* background-repeat: repeat-x; */
+            /* 背景图片沿y轴平铺 */
+            /* background-repeat: repeat-y; */
+            /* 页面元素既可以添加背景图片也可以添加背景颜色,不过背景图片会压住背景颜色 */
+            /* 背景图片的位置 left top right bottom*/
+            /* 方位名词 right center 和 center right 顺序没有关系 */
+            /* background-position: center right; */
+            /* 如果只写一个默认是居中对其 */
+            /* background-position: right; */
+            /* 第一个是x轴第二个是y轴 */
+            /* background-position: 10px 10px; */
+            /* 如果只写一个那一点是x轴 y默认垂直居中 */
+            /* background-position: 20px; */
+            /* 混合单位 */
+            /* 第一个一定是x 第二个一定是y */
+            /* 垂直居中 水平50px 第二个只能是top bottom center 第一个只能是 left right center*/
+            background-position: 50px top;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div></div>
+</body>
+
+</html>

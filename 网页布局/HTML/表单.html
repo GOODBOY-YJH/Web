@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单域 -->
+    <!-- action=提交地址 method=提交方式 name=名字 -->
+    <form action="demo.php" method="POST" name="name1">
+
+        <!-- text 文本框 用户可以往里面输入任何文字 -->
+        <!-- maxlength 输入最大长度 -->
+        <!-- value是填入文本框的默认字符 -->
+        用户名:<input type="text" name="username" value="请输入用户名" maxlength="6"> <br>
+
+        <!-- 密码框 -->
+        密码:<input type="password" name="password"> <br>
+
+        <!-- 单选按钮 可以实现多选一 -->
+        <!-- name是表单元素的名字 这=这里性别按钮必须有相同的名字才能实现多选一 -->
+        <!-- chack是默认选中状态 -->
+        性别: 男 <input type="radio" name="sex" value="男" checked="checked"> 女 <input type="radio" name="sex" value="女"> <br>
+
+        <!-- 复选框 -->
+        <!-- 这里value值是传送到后台给程序员使用的 -->
+        爱好: 吃饭 <input type="checkbox" name="hobby" value="吃饭"> 睡觉 <input type="checkbox" name="hobby" value="睡觉"> 打豆豆 <input type="checkbox" name="hobby" value="打豆豆"> <br>
+
+        <!-- 提交按钮 可以把表单元素里的值提交给后台服务器 -->
+        <input type="submit" value="免费注册">
+        <!-- 可以还原表单元素的默认状态 -->
+        <input type="reset" value="重新填写">
+        <!-- 普通按钮 一般搭配js使用 -->
+        <input type="button" value="获取短信验证码">
+        <!-- 文件域 使用场景 上传文件 -->
+        <input type="file">
+    </form>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue基础</title>
+</head>
+
+<body>
+    <!---->
+    <div id="app">
+        {{ message }}
+        <h2>{{school.name}}</h2>
+        <h2>{{school.mobile+"!"}}</h2>
+        <h2 v-text="message+'!!!'"></h2>
+        <h2>--------------------------------------</h2>
+        <span v-html="message1"></span>
+
+        <h2>--------------------------------------</h2>
+        <input type="button" value="1234" v-on:dblclick="doIt"></input><br>
+        <input type="button" value="123" v-on:click="doIt"></input><br>
+        <input type="button" value="12" @dblclick="doIt"></input><br>
+        <input type="button" value="1" @click="doIt"></input><br>
+        <h2 @click="show">{{food}}</h2><br>
+        <input type="text" @keyup.enter="show"></input><br>
+
+        <h2>--------------------------------------</h2>
+        <!-- true就显示 false就隐藏 -->
+        <img src="../../网页布局/HTML/img/Snipaste_2021-07-12_16-34-14.png" v-show="true">
+        <img src="../../网页布局/HTML/img/Snipaste_2021-07-12_16-34-14.png" v-show="isShow">
+        <img src="../../网页布局/HTML/img/Snipaste_2021-07-12_16-34-14.png" v-show="school.name=='anhui'">
+        <input type="button" value="显示/隐藏" @click="changeIsShow">
+
+        <h2>--------------------------------------</h2>
+        <p v-if="true">我是一个标签</p>
+        <p v-if="isShow">我是一个标签</p>
+        <!--表达式-->
+        <p v-if="0 == 1">我是一个标签</p>
+
+        <h2>--------------------------------------</h2>
+        <img v-bind:src="imgSrc" v-show="true">
+        <img :src="imgSrc" v-show="true" @click="changeIsShow" :class="isShow?'show':''" :class="{show:isShow}">
+        <img v-bind:src="imgSrc" :title="title+'!!!'" v-show="true">
+
+
+
+        <h2>--------------------------------------</h2>
+
+        <ul>
+            <li v-for="item in arr">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item,index) in arrList">{{item.name}}</li>
+        </ul>
+
+        <h2>--------------------------------------</h2>
+
+        <input type="text" v-model="message">
+
+        <h2>--------------------------------------</h2>
+
+        <input type="button" value="get请求" @click="joke">
+        <input type="button" value="post请求" @click="test">
+        <p>{{jokesMax}}</p>
+        <input type="text" v-model="city" value="post请求" @keyup.enter="weather">
+        <a href="javascript:;" @click="changeCity('北京')">北京</a>
+        <ul>
+            <li v-for="item in weatherList">{{item}}</li>
+        </ul>
+        <h2>--------------------------------------</h2>
+
+        <h2>--------------------------------------</h2>
+
+        <h2>--------------------------------------</h2>
+
+
+
+    </div>
+</body>
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            message1: '<a href="http://www.baidu.com">Hello Vue!</a>',
+            school: {
+                name: "anhui",
+                mobile: "1243456"
+            },
+            food: "西兰花炒蛋",
+            isShow: false,
+            imgSrc: "../../网页布局/HTML/img/Snipaste_2021-07-12_16-34-14.png",
+            title: "aakfh",
+            arr: [1, 2, 3, 4, 5],
+            arrList: [{
+                "name": "zhangsan",
+                "age": 18
+            }, {
+                "name": "lisi",
+                "age": 18
+            }],
+            jokesMax: "",
+            city: "",
+            weatherList: []
+        },
+        methods: {
+            doIt: function() {
+                alert("点我干嘛！");
+            },
+            show: function() {
+                this.food += "好好吃！";
+            },
+            changeIsShow: function() {
+                this.isShow = !this.isShow;
+            },
+            joke: function() {
+                var that = this;
+                axios.get("https://autumnfish.cn/api/joke/list?num=3").then(function(response) {
+                    that.jokesMax = response.data;
+                }, function(error) {
+                    alert(error);
+                })
+            },
+            test: function() {
+                axios.post("https://autumnfish.cn/api/joke/list", {
+                    username: "xilanhua"
+                }).then(function(response) {
+                    console.log(response.data.jokes);
+                }, function(error) {
+                    alert(error);
+                })
+            },
+            weather: function() {
+                var that = this;
+                // http://wthrcdn.etouch.cn/weather_mini?city=
+                axios.get("http://wthrcdn.etouch.cn/weather_mini?city=" + this.city).then(function(response) {
+                    that.weatherList = response.data.data.forecast;
+                }, function(error) {
+                    alert(error);
+                })
+            },
+            changeCity: function(city) {
+                // var that = this;
+                // // http://wthrcdn.etouch.cn/weather_mini?city=
+                // axios.get("http://wthrcdn.etouch.cn/weather_mini?city=" + city).then(function(response) {
+                //     that.weatherList = response.data.data.forecast;
+                // }, function(error) {
+                //     alert(error);
+                // })
+                this.city = city;
+                this.weather();
+            }
+        }
+    })
+</script>
+
+</html>

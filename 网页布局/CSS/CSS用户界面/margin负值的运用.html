@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            /* 只有li是相对定位时 z-index才有用 */
+            position: relative;
+            list-style: none;
+            float: left;
+            width: 150px;
+            height: 200px;
+            border: 10px solid red;
+            /* 把浮动造成的粗边框消除 */
+            margin-left: -10px;
+        }
+
+        ul li:hover {
+            /* 如果盒子没有定位 给盒子添加相对定位即可 这样移动到这个盒子的时候就会压住其他盒子 */
+            /* position: relative; */
+            /* 或者提高这个元素的层级 */
+            /* 个人觉得不好使 */
+            z-index: 1;
+            border: 10px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>

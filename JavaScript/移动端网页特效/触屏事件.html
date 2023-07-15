@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 触屏事件 touch
+        // touchstart 手指触摸到一个Dom元素时触发
+        // touchmove 手指在一个Dom元素上滑动时触发
+        // touchend 手指在一个元素上移开时触发
+        // 获取元素
+        var div = document.querySelector('div');
+        div.addEventListener('touchstart', function(e) {
+            // 第一个手指
+            console.log(e.targetTouches[0]);
+
+            // // touches 正在触摸屏幕的所有手指的列表
+            // console.log(e.touches);
+            // // 正在触摸当前DOM元素上的手指的一个列表
+            // console.log(e.targetTouches);
+            // // 手指状态发生了改变的列表 从无到有 从有到无变化
+            // console.log(e.changedTouches);
+        });
+        div.addEventListener('touchmove', function(e) {
+            // console.log(22);
+            // touches 正在触摸屏幕的所有手指的列表
+            // console.log(e.touches);
+            // 正在触摸当前DOM元素上的手指的一个列表
+            // console.log(e.targetTouches);
+            // 手指状态发生了改变的列表 从无到有 从有到无变化
+            // console.log(e.changedTouches);
+        });
+        div.addEventListener('touchend', function(e) {
+            // console.log(33);
+            // // touches 正在触摸屏幕的所有手指的列表
+            // console.log(e.touches);
+            // // 正在触摸当前DOM元素上的手指的一个列表
+            // console.log(e.targetTouches);
+            // // 手指状态发生了改变的列表 从无到有 从有到无变化
+            // console.log(e.changedTouches);
+        });
+        // 触摸事件对象
+    </script>
+</body>
+
+</html>

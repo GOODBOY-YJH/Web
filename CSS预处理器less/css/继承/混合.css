@@ -1,0 +1,42 @@
+.juzhong1,
+#warp .inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.juzhong1:hover,
+#warp .inner:hover {
+  background-color: red!important;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+#warp {
+  position: relative;
+  width: 300px;
+  height: calc(200px + 200);
+  border: 1px solid;
+  margin: 0 auto;
+}
+#warp .inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#warp .inner:nth-child(1) {
+  background: pink;
+  height: 100px;
+  width: 100px;
+}
+#warp .inner:nth-child(2) {
+  background: deeppink;
+  height: 50px;
+  width: 50px;
+}

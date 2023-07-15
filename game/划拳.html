@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>划拳游戏</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: dimgrey;
+        }
+        .home{
+            height: 600px;
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .left, .right{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .botton {
+            width: 500px;
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .botton .a, .b, .c{
+            width: 100px;
+            height: 60px;
+            background-size: 100px 60px;
+            background-repeat: no-repeat;
+            border: 0;
+        }
+
+        .botton .a{
+            background-image: url(./a.png);
+        }
+
+        .botton .b{
+            background-image: url(./b.png);
+        }
+
+        .botton .c{
+            background-image: url(./c.png);
+        }
+        
+        div img{
+            display:block;
+            margin: 0 auto;
+            width: 500px;
+            height: 350px;
+        }
+        .right .btn {
+            display: block;
+            margin: 0 auto;
+            width: 120px;
+            height: 50px;
+        }
+
+        .result{
+            text-align: center;
+        }
+        .score{
+            position: relative;
+            top: 80px;
+            text-align: center;
+        }
+        .new {
+            display: block;
+            margin: 10px auto;
+            width: 120px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="score" id="score">0:0</h3>
+    <div class="home">
+        <div class = "left">
+            <h3>选择我的出拳</h3>
+            <div>
+                <img id="me" src="./abc.png" alt="">
+            </div>
+            <div class="botton">
+                <button class="a" id="a"></button>
+                <button class="b" id="b"></button>
+                <button class="c" id="c"></button>
+            </div>
+        </div>
+        <div class = "right">
+            <h3>电脑出拳</h3>
+            <div>
+                <img id="computer" src="./abc.png" alt="">
+            </div>
+            <button id = "btn" class="btn">点我开始</button>
+        </div>
+    </div>
+    <h3 class="result" id="result">上局结果：</h3>
+    <button id="new" class="new">重新开始</button>
+</body>
+<script>
+    let meResult = '';
+    let computerResult = '';
+    let me = 0;
+    let computer = 0;
+    $("#a").click(function(){
+        meResult = 'a';
+        $("#me").attr("src", "./a.png");
+    });
+
+    $("#b").click(function(){
+        meResult = 'b';
+        $("#me").attr("src", "./b.png");
+    });
+
+    $("#c").click(function(){
+        meResult = 'c';
+        $("#me").attr("src", "./c.png");
+    });
+
+    $("#btn").click(function(){
+        $("#btn").attr("disabled", "disabled");
+        let t = 3;
+        const time = setInterval(function(){
+            $("#computer").attr("src", t + ".png");
+            t--;
+            if(t < 0){
+                let a = parseInt(Math.random() * 3) + 1;
+                switch(a){
+                    case 1: $("#computer").attr("src", "./a.png");
+                    computerResult = 'a'; break;
+                    case 2: $("#computer").attr("src", "./b.png"); 
+                    computerResult = 'b'; break;
+                    case 3: $("#computer").attr("src", "./c.png"); 
+                    computerResult = 'c'; break;
+                }
+                $("#a").attr("disabled", "disabled");
+                $("#b").attr("disabled", "disabled");
+                $("#c").attr("disabled", "disabled");
+                if(meResult == ''){
+                    $("#result").text("上局结果：您未选择");
+                }else if(computerResult == ''){
+                    $("#result").text("上局结果：电脑决策失败");
+                }else if(meResult == computerResult){
+                    $("#result").text("上局结果：平局");
+                }else if(meResult == 'a' && computerResult == 'b'){
+                    $("#result").text("上局结果：输");
+                    computer++;
+                }else if(meResult == 'a' && computerResult == 'c'){
+                    $("#result").text("上局结果：赢");
+                    me++;
+                }else if(meResult == 'b' && computerResult == 'c'){
+                    $("#result").text("上局结果：输");
+                    computer++;
+                }else if(meResult == 'b' && computerResult == 'a'){
+                    $("#result").text("上局结果：赢");
+                    me++;
+                }else if(meResult == 'c' && computerResult == 'a'){
+                    $("#result").text("上局结果：输");
+                    computer++;
+                }else if(meResult == 'c' && computerResult == 'b'){
+                    $("#result").text("上局结果：赢");
+                    me++;
+                }
+                $("#score").text(me + ":" + computer);
+                clearInterval(time);
+            }
+        }, 1000);
+
+        $("#new").click(function(){
+            meResult = '';
+            computerResult = '';
+            $("#computer").attr("src", "./abc.png");
+            $("#me").attr("src", "./abc.png");
+            $("#btn").removeAttr("disabled");
+            $("#a").removeAttr("disabled");
+            $("#b").removeAttr("disabled");
+            $("#c").removeAttr("disabled");
+        });
+    });
+</script>
+</html>

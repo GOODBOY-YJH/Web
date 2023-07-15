@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* 让一个页面元素在页面上显示和隐藏起来 */
+        /* display属性用于设置一个元素应如何显示 */
+        /* display:none; 隐藏对象 */
+        /* display:block;除了转换为块级元素之外，同时还有显示元素的意思 */
+        
+        .peppa {
+            /* 不但可以隐藏元素并且不占用原来的位置 */
+            /* display: none; */
+            /* 显示元素 */
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .george {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        /* visibility 可见性 */
+        /* visibility:hidden 隐藏 */
+        /* visibility:visable 显示 */
+        
+        .a {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 看不见但是位置仍然占有 */
+            visibility: hidden;
+        }
+        
+        .b {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            visibility: visible;
+        }
+        /* 如果有定位的盒子,请慎用overflow 会剪切掉盒子外的部分 */
+        /* overflow 溢出可见性 */
+        /* 只对溢出的部分进行显示和隐藏 */
+        /* overflow:auto 在需要的时候添加滚动条 */
+        /* overflow:visible 显示 */
+        /* overflow:hidden; 隐藏 */
+        /* overflow:scroll; 显示滚动条 不溢出也显示滚动条 */
+        
+        .c {
+            /* overflow: hidden; */
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="peppa">佩奇</div>
+    <div class="george">乔治</div>
+    <div class="a">隐藏</div>
+    <div class="b">显示</div>
+    <div class="c">
+        <p>
+            有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围
+            有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围
+            有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围 有很多文字超出了盒子范围有很多文字超出了盒子范围有很多文字超出了盒子范围
+        </p>
+    </div>
+</body>
+
+</html>

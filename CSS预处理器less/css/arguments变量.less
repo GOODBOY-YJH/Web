@@ -1,0 +1,35 @@
+@import "../css/less混合/库.less";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#warp{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid;
+    margin: 0 auto;
+    .inner{
+        .juzhong(100px, 150px, pink);
+    }
+    .inner2{
+        .juzhong(100px, 100px,gray);
+        &:hover{
+            background-color: green;
+        }
+    }
+    .inner3{
+        .juzhong(@c:black); // 命名参数（关键字参数）
+    }
+}
+.border(@1, @2, @3){
+    border: @arguments;   // 组合参数为一条
+}
+
+
+.sjx{
+    .border(1px, solid, black);
+    .traingle(L, 100px, yellow);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 针对行内元素或行内块元素居中对齐vertical-align */
+        /* baseline 默认 放在父元素的基线上
+        top 把元素的顶端与行中最高元素的顶端对齐
+        middle 把此元素放在父元素的中部
+        bottom 把元素的顶端与行中最低元素的顶端对齐 */
+        /* 只需要给一个 父元素的所有都对齐 */
+        
+        img {
+            /* vertical-align: bottom; */
+            /* 图片和文字垂直居中 */
+            vertical-align: middle;
+            /* vertical-align: top; */
+            /* vertical-align: baseline; */
+        }
+        
+        textarea {
+            vertical-align: middle;
+        }
+        /* 图片底侧空白缝隙解决方法 */
+        
+        div {
+            /* border: 2px solid pink; */
+            /* 1.给图片添加vertical-align 只要不是baseline就行 提倡使用 只要给图片加就行了 这里多余了 */
+            vertical-align: middle;
+            /* 2.把图片转化为块级元素 */
+            /* display: block; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img src="../../HTML/img/Snipaste_2021-07-12_16-34-14.png" alt=""> 哈哈哈
+    </div>
+    <img src="../../HTML/img/Snipaste_2021-07-12_16-34-14.png" alt=""> 这是漂亮小妹妹abcdefj
+    <img src="../../HTML/img/Snipaste_2021-07-12_16-34-14.png" alt="">这是漂亮小妹妹abcdefj
+    <textarea name="" id="" cols="30" rows="10"></textarea>这不是漂亮小妹妹abcdefj
+
+</body>
+
+</html>

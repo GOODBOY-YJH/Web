@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <span>
+    </span>
+    <ul>
+        <li>12345</li>
+        <li>12345</li>
+        <li>12345</li>
+        <li>12345</li>
+        <li>12345</li>
+    </ul>
+    <div class="box">
+        <span class="erweima"></span>
+    </div>
+    <script>
+        // 利用节点的层次关系获得操作
+
+        // 父节点 parentNode
+        var erweima = document.querySelector('.erweima');
+        // 获取二维码的父节点 得到的是里元素最近的父节点 如果找不到父节点则返回为null
+        console.log(erweima.parentNode);
+
+
+        // 子节点 childNodes 返回子节点的集合 包含元素节点 文本节点等
+        var ul = document.querySelector('ul');
+        console.log(ul.childNodes);
+        // 只获得所有的子元素节点 children
+        console.log(ul.children);
+
+        // 获得第一个节点和最后一个节点 firstChild lastChild
+        // 获取第一个子节点 不管节点的类型是元素还是文本
+        console.log(ul.firstChild);
+        // 获取最后一个子节点 不管节点的类型是元素还是文本
+        console.log(ul.lastChild);
+        // 获取第一个子元素节点 有兼容性问题
+        console.log(ul.firstElementChild);
+        // 获取最后一个子元素节点
+        console.log(ul.lastElementChild);
+
+        // 实际开发的写法
+        console.log(ul.children[0]);
+        console.log(ul.children[ul.children.length - 1]);
+    </script>
+
+    <h1>兄</h1>
+    <h2>弟弟</h2>
+    <script>
+        // 兄弟节点 
+        var div = document.querySelector('h1');
+        //node.nextSibling 下一个兄弟节点 不管节点的类型是元素还是文本
+        console.log(div.nextSibling);
+        // node.nextElementSibling 下一个元素节点
+        console.log(div.nextElementSibling);
+        //node.previousSibling 上一个兄弟节点 不管节点的类型是元素还是文本
+        console.log(div.previousSibling);
+        // node.previousElementSibling 上一个元素节点
+        console.log(div.previousElementSibling);
+    </script>
+
+    <ul class="aa"></ul>
+    <script>
+        // 动态创建节点
+        var li = document.createElement('li');
+        // 添加节点 node.appendChild(child);
+        var ul = document.querySelector('.aa');
+        ul.appendChild(li);
+
+        // 在某个元素前面插入节点
+        var lili = document.createElement('li');
+        // node.insertBefore(child, 指定元素);
+        ul.insertBefore(lili, ul.children[0]);
+    </script>
+</body>
+
+</html>

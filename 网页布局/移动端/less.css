@@ -1,0 +1,9 @@
+body {
+  background-color: pink;
+}
+body a {
+  background-color: #fff;
+}
+body::after {
+  background-color: #fff;
+}

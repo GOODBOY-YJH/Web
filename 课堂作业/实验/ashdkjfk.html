@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>a</title>
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById('btn');
+            var name = document.getElementById('name');
+            //点击按钮  把文本框内填充Hello World
+            //事件 onclick事件  事件处理函数
+            //注册事件
+            //js涉及到很多函数 匿名函数
+            c = function() {
+                name.value = "hello world";
+            };
+            btn.onclick = function() {
+                name.value = "hello world";
+            };
+            //在事件里调用函数
+        };
+        //1 获取元素
+    </script>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <input type="button" value="点击" onclick="c()">
+    <input type="button" value="点击1" id="btn">
+</body>
+
+</html> -->
+
+课堂小练习：
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #out {
+            width: 1000px;
+            height: 600px;
+            background: rgb(168, 0, 0);
+            margin: 50px;
+            border: 4px solid orange;
+        }
+        
+        #div1 {
+            float: left;
+            width: 300px;
+            height: 600px;
+            background: #FF0000;
+        }
+        
+        #div2 {
+            float: right;
+            width: 700px;
+            height: 400px;
+            background-color: chartreuse;
+        }
+        
+        #div3 {
+            float: right;
+            width: 700px;
+            height: 200px;
+            background: violet;
+        }
+        
+        .tb {
+            margin: 0 auto;
+        }
+        
+        .h1 {
+            width: 100px;
+            height: 100px;
+            background-color: #658;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <div id="out">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <table id="tb" class="tb">
+        <tr>
+            <td class="h1"></td>
+            <td class="h1"></td>
+            <td class="h1"></td>
+        </tr>
+        <tr>
+            <td class="h1"></td>
+            <td class="h1"></td>
+            <td class="h1"></td>
+        </tr>
+        <tr>
+            <td class="h1"></td>
+            <td class="h1"></td>
+            <td class="h1"></td>
+        </tr>
+        <tr>
+            <td class="h1"></td>
+            <td class="h1"></td>
+            <td class="h1"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

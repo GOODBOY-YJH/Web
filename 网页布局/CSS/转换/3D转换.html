@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 透视写在观察元素的父盒子上面 */
+        
+        body {
+            perspective: 200px;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            /* background: url(../../HTML/img/Snipaste_2021-07-12_16-34-14.png) no-repeat; */
+            background-color: pink;
+            /* transform: translateX(100px);
+            transform: translateY(100px); */
+            /* transform: translateX(100px) translateY(100px) translateZ(10px); */
+            /* 1.translateZ(10px);沿着z轴移动 单位一般用px 正向向外移动 负数向内移动 */
+            /* 简写方法 里面的xyz都不能省略没有就写0 */
+            /* transform: translate3d(x, y, z); */
+            transform: translate3d(0, 0, 0);
+            /* 3d旋转 沿着x y z 轴旋转 */
+            /* transform: rotateX(10deg);
+            transform: rotateY(10deg);
+            transform: rotateZ(10deg); 
+            transform: rotate3d(x, y, z, deg); 
+            */
+            transition: all 3s;
+        }
+        
+        div:hover {
+            /* transform: rotateX(25deg);
+            transform: rotateY(-25deg); */
+            /* transform: rotateZ(45deg); */
+            transform: rotate3d(1, 1, 0, 45deg);
+        }
+        
+        h5 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 300px auto;
+            background-color: pink;
+            transition: all 3s;
+            /* 让子元素保持3d立体空间 默认为flat不保持 */
+            transform-style: preserve-3d;
+        }
+        
+        span:nth-child(1) {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transform: rotateX(90deg);
+        }
+        
+        span:nth-child(2) {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            transform: rotateY(90deg);
+        }
+        
+        h5:hover {
+            /* transform: rotateX(25deg);
+            transform: rotateY(-25deg); */
+            /* transform: rotateZ(45deg); */
+            /* transform: rotate3d(0, 1, 0, 45deg); */
+            transform: rotateY(-85deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+    </div>
+
+    <h5>
+        <span></span>
+        <span></span>
+    </h5>
+</body>
+
+</html>

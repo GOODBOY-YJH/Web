@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-index="2"></div>
+    <script>
+        // H5规定所有自定义属性都要以data- 开头
+        var div = document.querySelector('div');
+        console.log(div.getAttribute('data-index'));
+        div.setAttribute('data-time', 2019);
+        console.log(div.getAttribute('dtat-time'));
+        // H5新增 element.dataset.index 或者 element.dataset['index'] dataset是一个集合 里面存了所有以data-开头的属性 并且只能获取data-开头的内容
+        console.log(div.dataset.index + div.dataset.time);
+        // 如果是data-time-name形式的命名 则H5 dataset方式使用 div.dataset.timeName 驼峰方式查询
+    </script>
+</body>
+
+</html>

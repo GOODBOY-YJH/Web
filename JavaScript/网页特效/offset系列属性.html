@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 50px;
+        }
+        
+        .w {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+    <script>
+        // element.offsetParent 返回作为该元素带有定位的父级元素 如果父级都没有定位则返回body
+        // element.offsetTop 返回元素相对带有定位父元素上方的偏移
+        // element.offsetLeft 返回元素相对带有定位父元素左边框的偏移
+        // element.offsetWidth 返回自身包括padding 边框 内容区的宽度 返回数值不带单位
+        // element.offsetHeight 返回自身包括padding 边框 内容区的高度 返回数值不带单位
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        console.log(father.offsetTop);
+        // 以带有定位的父亲为准 如果没有带有定位的父亲 则以body为准
+        console.log(son.offsetLeft);
+
+
+        // 获得元素的大小和宽度 和高度 padding 和 border 都会撑大盒子 margin不会撑大盒子
+        var w = document.querySelector('.w');
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+
+        // element.offsetParent 返回作为该元素带有定位的父级元素 如果父级都没有定位则返回body
+        console.log(w.offsetParent); //返回的是该元素带有定位的父亲
+        console.log(w.parentNode); // 返回的是最近一级的父亲
+
+        // e.offsetX 可以直接获取鼠标到所在盒子的位置 就不用 e.pageX - box.offsetLeft 的麻烦方法了
+    </script>
+</body>
+
+</html>

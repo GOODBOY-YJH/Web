@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
+        // offset 可以得到任意样式表中的样式值 style只能得到行内样式表的样式值
+        // offset 获得的值是没有单位的 style.width 获得的是有单位的字符串
+        // offset 获得的值带有 padding 和 border style 的值没有
+        // offset 获取的是只读属性 style 是读写属性
+        // 所以 只获取元素的大小位置用offset合适 修改元素的值 style合适
+        console.log(box.offsetWidth);
+        console.log(box.style.width);
+
+        // e.offsetX 可以直接获取鼠标到所在盒子的位置 就不用 e.pageX - box.offsetLeft 的麻烦方法了
+    </script>
+</body>
+
+</html>

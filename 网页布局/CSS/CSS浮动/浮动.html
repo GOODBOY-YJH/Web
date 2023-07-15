@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 多个块级元素纵向排列找标准流 多个块级元素横向排列找浮动 */
+        .left {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            float: left;
+        }
+
+        .right {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            float: right;
+        }
+
+        /* 浮动特性 */
+        /* 1.浮动元素会脱离标准流 */
+        /* 浮动的盒子不再保留原先的位置 
+        浮动的盒子会显示在不浮动的盒子上方
+        */
+        .a {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .b {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        /* 浮动行显示 */
+        /* 所有的浮动盒子都会在一行显示 并且都是上沿对齐 */
+        .c {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .d {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+
+        .e {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+
+        .f {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: gray;
+        }
+
+        /* 浮动元素具有行内块元素特性 */
+        /* 添加浮动能把span变为具有行内块特性 */
+        span {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: greenyellow;
+        }
+
+        /* 如果行内元素有率浮动，则不需要转换为块级/行内块元素就可以之间给宽度和高度了 */
+        p {
+            float: right;
+            height: 300px;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="left">左青龙</div> -->
+    <!-- <div class="right">右白虎</div> -->
+    <!-- <div class="a"></div> -->
+    <!-- <di bv class="b"></di> -->
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <div class="f"></div>
+    <span></span>
+    <p>我没了</p>
+</body>
+
+</html>

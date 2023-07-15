@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <script>
+        // 注册事件（传统）
+        // 利用on开头的事件 <button onclick="alert('hello')" ></button>  btn.onclick = function() {}
+        // 特点 注册事件的唯一性
+        // 同一个元素只能设置一个处理函数， 最后注册的处理函数将会覆盖前面注册的处理函数
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function() {
+            alert('qwe');
+        };
+
+
+
+        // 方法监听注册方式 
+        // addElementListener() 可以使用attachEvent() 代替
+        // 同一个元素可以添加多个监听器 按顺序依次执行
+        // eventTarget.addEvenmentListener(type, listener[, useCapture])
+        // type 事件类型 比如click mouseover 前面不用加on
+        // listener 事件处理函数 会调用该监听函数
+        // useCapture 可选参数 是一个布尔值 默认是false
+
+        // 同一个事件可以一次添加多个监听器 按顺序调用
+        btns[1].addEventListener('click', function() {
+            alert('dsf');
+        });
+        btns[1].addEventListener('click', function() {
+            alert('ds123f');
+        });
+
+
+        // attachEvent 事件监听函数 非标准 不推荐使用
+        // eventTarget.attachEvent(eventNameWithOn, callback);
+        // eventNameWithOn 事件类型字符串 onclick onmouseover 等 要带on
+        // callback 事件处理函数
+
+
+
+
+
+
+        // 删除事件
+        // 传统方式
+        // 1. eventTarget.onclick = null
+        // 新方式 移除事件, 需要移除的事件不能使用匿名函数的方式。要把事件显示命名
+        // 2. eventTarget.removeElementListener(type, listener[, useCapture])
+        // 3. eventTarget.detachEvent(eventNameWithOn, callback)
+    </script>
+</body>
+
+</html>

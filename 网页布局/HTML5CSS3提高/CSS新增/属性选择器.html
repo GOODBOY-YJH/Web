@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 必须有input 必须有value属性 才会选择 */
+        
+        E[att]
+        /* 选择具att属性并且值等于val的E元素 */
+        
+        E[att="val"]
+        /* 选择具att属性并且以val开头的E元素 */
+        
+        E[att ^="val"]
+        /* 选择具att属性并且以val结尾的E元素 */
+        
+        E[att $="val"]
+        /* 选择具att属性并且值含有val的E元素 */
+        
+        E[att *="val"]
+        /* 例如 */
+        /* input[value] {
+            background-color: pink;
+        } */
+        
+        E[value="请输入用户名"] {
+            color: blue;
+        }
+        /* 类选择器 属性选择器 伪类选择器 权重都是10 */
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器可以不借助类或id选择器 -->
+    <input type="text" value="请输入用户名">
+    <input type="text">
+
+</body>
+
+</html>

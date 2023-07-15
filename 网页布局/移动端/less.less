@@ -1,0 +1,20 @@
+// 引入其他的css文件 可以拔一根样式文件导入到另一个样式文件里面
+@import "common";
+// link 是把一个样式文件引入到html文件里面
+
+
+// 定义一个粉色的变量
+@color:pink;
+// 变量名不能以数字开头 变量名区分大小写 
+// 上面定义下面使用
+body {
+    background-color: @color;
+    // 儿子直接定义在里面
+    a {
+        background-color: #fff;
+    }
+    // 选择器用&前缀
+    &::after {
+        background-color: #fff;
+    }
+}

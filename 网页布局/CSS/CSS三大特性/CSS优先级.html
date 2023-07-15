@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 继承或者*优先级最低 继承的权重是0！！！最低
+        依次 元素选择器
+        类选择器 伪类选择器
+        id选择器
+        行内样式选择器style=""
+        !important优先级最高 最重要的 */
+        div {
+            color: pink !important;
+            /* !important优先级最高 */
+        }
+
+        .test {
+            color: red;
+        }
+
+        /* a链接默认指定了一个颜色，不受继承的影响 */
+        /* 修改a的颜色只能专门修改 */
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        body {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">选择器权重</div>
+    <a href="#">不受body影响</a>
+</body>
+
+</html>

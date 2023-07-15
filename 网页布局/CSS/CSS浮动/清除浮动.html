@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 双伪元素清除浮动 */
+        .clearfix1::before,
+        .clearfix1::after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix1::after {
+            clear: both;
+        }
+
+        .clearfix {
+            /* IE6,7 专有 */
+            zoom: 1;
+        }
+
+        /* 伪元素清除浮动(较常用) ：after伪元素法 也是给父元素添加 */
+        .clearfix::after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        /* 照顾低版本代码 */
+        .clearfix {
+            /* IE6,7 专有 */
+            zoom: 1;
+        }
+
+        .box {
+            width: 400px;
+            border: 1px solid blue;
+            margin: 0 auto;
+            /* 父元素添加overflow清除浮动 优点 简洁 缺点 无法显示溢出部分 */
+            /* overflow: hidden; */
+        }
+
+        .damao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: yellow;
+        }
+
+        /* 额外标签法 */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用clearfix1 就是 双伪元素清除浮动  -->
+    <div class="box  clearfix">
+        <div class="damao"></div>
+        <div class="ermao"></div>
+        <!-- 额外标签法新增一个块元素（不常用） 这个新增的盒子要求必须是块级元素不能是行内元素 -->
+        <!-- <div class="clear"></div> -->
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

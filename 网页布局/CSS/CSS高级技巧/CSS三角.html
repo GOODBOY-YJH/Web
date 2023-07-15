@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 0px;
+            height: 0px;
+            /* border: 10px solid yellow; */
+            border-top: 10px solid red;
+            border-left: 10px solid blue;
+            border-bottom: 10px solid pink;
+            border-right: 10px solid green;
+        }
+
+        .box2 {
+            width: 0px;
+            height: 0px;
+            /* 下面这两句话是为了某些情况下的兼容性 */
+            line-height: 0px;
+            font-size: 0px;
+            /* border: 10px solid yellow; */
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid green;
+        }
+
+
+        .jd {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+        }
+
+        .jd span {
+            position: absolute;
+            right: 15px;
+            top: -10px;
+            width: 0px;
+            height: 0px;
+            line-height: 0px;
+            font-size: 0px;
+            border: 5px solid transparent;
+            border-bottom-color: turquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="jd">
+        <span></span>
+    </div>
+</body>
+
+</html>

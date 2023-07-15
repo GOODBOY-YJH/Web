@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        // 事件对象
+        var div = document.querySelector('div');
+        // event就是一个事件对象 写到我们侦听函数的小括号里面 当形参来看
+        // 2. 事件对象只有有了事件才会存在 它是系统给我们自动创建的 不需要传递参数
+        // 3. 事件对象 是我们事件的一系列相关数据的集合 跟事件相关的比如鼠标点击里面就包含了鼠标的相关信息 例如鼠标坐标等 如果是键盘事件 里面就包含了键盘事件的信息 比如 判断用户按下了哪个键
+        // 4. 这个事件对象我们可以自己命名
+        // 5. 事件对象也有兼容性问题 ie678 里面必须使用 widow.event
+
+        // div.onclick = function(event) {
+        //     console.log(event);
+        // }
+
+        // 或者
+
+        // div.addEventListener('click', function(event) {
+        //     console.log(event);
+        // });
+
+
+        // 事件对象常用方法
+        // 1.e.target 返回触发事件的对象 标准 与this不一样 this返回的是绑定事件的对象 e.target 返回的是触发事件的对象
+        // 2.e.srcElement 返回触发事件的对象 非标准 ie678使用
+
+        // 3.e.type 返回事件的类型 比如click mouseover 不带on
+        // 4.e.cancelBubble 该属性阻止冒泡 非标准 ie678使用
+        // 5.e.returnValue 该属性 阻止默认事件 非标准 ie678使用 比如不让连接跳转
+        // 6.e.preventDefault() 该方法 阻止默认事件 标准
+        // 7.e.stopPropagation() 防止冒泡 标准
+        div.addEventListener('click', function(event) {
+            console.log(event.target);
+            console.log(event.type);
+            // 让链接不跳转或者提交按钮不提交
+            event.preventDefault();
+            // 停止冒泡
+            event.stopPropagation();
+            // 停止冒泡 ie 678 
+            // e.cancelBubble = true;
+        });
+    </script>
+</body>
+
+</html>

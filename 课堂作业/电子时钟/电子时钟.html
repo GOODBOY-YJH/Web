@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=gb2312">
+
+    <title>电子时钟</title>
+    <script>
+        function toDou(n) {
+            if (n < 10)
+                return '0' + n;
+            else
+                return '' + n;
+        }
+        window.onload = function() {
+            var imgs = document.getElementsByTagName("img");
+            setInterval(function() {
+                var oDate = new Date();
+                var str = toDou(oDate.getHours()) + toDou(oDate.getMinutes()) + toDou(oDate.getSeconds());
+                for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].src = str[i] + '.png';
+                }
+            }, 1000);
+        };
+    </script>
+</head>
+
+<body style="background:black;color:red;font-size:80px">
+    电子时钟<br>
+    <img src="0.png" width="10%" />
+    <img src="0.png" width="10%" /> :
+    <img src="0.png" width="10%" />
+    <img src="0.png" width="10%" /> :
+    <img src="0.png" width="10%" />
+    <img src="0.png" width="10%" />
+</body>
+
+</html>

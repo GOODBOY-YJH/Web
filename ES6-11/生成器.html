@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 生成器就是一个特殊的函数
+        // 异步编程 纯回调函数
+        // yield 函数代码的分隔符
+        function* gen(arg) {
+            // 里面可以使用yield语句
+            console.log(arg);
+            let one = yield '111';
+            console.log(one);
+            let two = yield '222';
+            console.log(two);
+            let three = yield '333';
+            console.log(three);
+            console.log('hello world!');
+        };
+        // 函数返回的是一个迭代器 通过迭代器的next方法调用
+        let iterator = gen('AAA');
+        // console.log(iterator);
+        // itreator.next();
+
+        // 遍历
+        // for (let v of gen()) {
+        //     // 每一次调用的返回结果是 yield 后面的表达式
+        //     console.log(v);
+        // }
+
+        // next 方法可以传入实参
+        console.log(iterator.next());
+        // 作为第一个yeild整体返回的结果
+        console.log(iterator.next('BBB'));
+        // 作为第二个yeild整体返回的结果
+        console.log(iterator.next('CCC'));
+        // 作为第三个yeild整体返回的结果
+        console.log(iterator.next('DDD'));
+
+        // 一般用于异步使用
+        function getUser() {
+            setTimeout(() => {
+                let date = '用户名';
+                ite.next(date);
+            }, 1000);
+        }
+
+        function getDate() {
+            setTimeout(() => {
+                let date = '数据';
+                ite.next(date);
+            }, 2000);
+        }
+
+        function getEnd() {
+            setTimeout(() => {
+                let date = '结束';
+                ite.next(date);
+            }, 3000);
+        }
+
+
+        function* gen1() {
+            let users = yield getUser();
+            console.log(users);
+            let date = yield getDate();
+            console.log(date);
+            let end = yield getEnd();
+            console.log(end);
+        }
+        let ite = gen1();
+        ite.next();
+    </script>
+</body>
+
+</html>

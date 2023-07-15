@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 复合选择器权重会有叠加 */
+        /* ul - 0001 li - 0001 叠加 0002 */
+        ui li {
+            color: red;
+        }
+
+        /* li - 0001 */
+        /* 所以执行ul-li */
+        li {
+            color: green;
+        }
+
+        /* ul - 0010 li - 0001 叠加 0011 > 0002 ul li和 .nev li执行.nev li */
+        /* 叠加的时候不会有进位情况 */
+        .nev li {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nev">
+        <li>大猪蹄子</li>
+        <li>大肘子</li>
+        <li>猪尾巴</li>
+    </ul>
+</body>
+
+</html>

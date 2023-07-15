@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a,
+        .b {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 50px;
+            background-color: pink;
+        }
+
+        /* 外边距合并问题,下面两个外边距取较大的那个 */
+        .a {
+            margin-bottom: 100px;
+        }
+
+        .b {
+            margin-top: 200px;
+        }
+
+        /* 嵌套外边界合并问题 */
+        /* 因该是边界撑大盒子导致 */
+        /* .c {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            margin-top: 50px;
+        }
+
+        .d {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+        } */
+
+        /* 解决方案可以为父元素定义上边框 或者为父元素定义上边距 或者为父元素添加overflow:hidden */
+        .c {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            margin-top: 50px;
+            /* 加边框 把颜色调成透明 */
+            /* border-top: 1px solid transparent; */
+            /* 加内边距 */
+            /* padding: 1px; */
+            /* 现在记住就行 */
+            overflow: hidden;
+        }
+
+        .d {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c">
+        <div class="d"></div>
+    </div>
+    <div class="a">大毛</div>
+    <div class="b">二毛</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 水平居中对其 */
+            margin: 100px auto;
+            /* box-shadow:h-shadow v-shadow blur spread color inset */
+            /* h-shadow 必须 水平阴影的位置可以负值 
+            v-shadow 必须 垂直阴影的位置 允许负值
+            blur 可选 模糊距离 
+            spread 可选 阴影尺寸 
+            color 可选 阴影颜色   
+            inset 可选 将外部阴影改为内部阴影 */
+            /* box-shadow: 10px 10px 10px 10px black; */
+            /* 一般传半透明色 rgba */
+            /* box-shadow: 10px 10px 10px 4px rgba(0, 0, 0, 0.6) inset; */
+        }
+
+        div:hover {
+            /* 鼠标经过div产生影子 */
+            box-shadow: 10px 10px 10px 4px rgba(0, 0, 0, 0.6) inset;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

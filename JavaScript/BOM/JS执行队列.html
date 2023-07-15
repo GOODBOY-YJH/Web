@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js是一个单线程语言
+        // 同步和异步
+        // 问题1
+        console.log(1);
+        setTimeout(function() {
+            console.log(3);
+        }, 1000);
+        console.log(2);
+        // 问题2
+        console.log(1);
+        setTimeout(function() {
+            console.log(3);
+        }, 0);
+        console.log(2);
+
+
+
+        // 同步任务
+        // 例如 console.log() alert()放到主线程执行栈里面
+
+        // 异步任务 放到任务队列里面
+        // 1. 普通事件如click resize等
+        // 2. 资源加载 如load error等 
+        // 3.定时器 包括setInterval setTimout等
+
+        // 执行时先执行主线程栈里面的任务 后执行任务队列里面的任务
+        // 异步任务执行机制 只有异步任务开始时才被添加到任务队列里面
+    </script>
+</body>
+
+</html>

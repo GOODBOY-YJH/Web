@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.移动盒子的位置 定位 盒子外边距 2d转换移动 */
+        /* 2d转换移动最大的优点是不会影响到其他元素的位置 */
+        /* translate对于行内元素无效 */
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* x就是x轴 y就是y轴 */
+            /* transform: translate(x, y); */
+            transform: translate(100px, 100px);
+        }
+        
+        h1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* x就是x轴 y就是y轴 */
+            /* transform: translate(x, y); */
+            /* 百分比是依据自身的长度计算的 */
+            transform: translate(50%, 100px);
+        }
+        
+        h2 {
+            position: relative;
+            height: 500px;
+            width: 500px;
+            background-color: palegreen;
+        }
+        
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            width: 100px;
+            background-color: purple;
+            /* 实现垂直居中 */
+            transform: translate(-50%, -50%);
+        }
+        /* 2.旋转 */
+        
+        img {
+            width: 150px;
+            height: 150px;
+            /* border-radius: 50%; */
+            /* 设置旋转中心点 默认在元素中心点 */
+            /* 可以跟方位名称 left bottom */
+            /* 默认是50% 50% center center  */
+            /* 可以是px像素 */
+            transform-origin: 100px 100px;
+            /* 旋转50度 */
+            transform: rotate(50deg);
+            border: 1px solid pink;
+            /* 过渡写到本身上 谁做过渡给谁加 */
+            transition: all 0.2s;
+        }
+        
+        img:hover {
+            transform: rotate(720deg);
+        }
+        /* 3.缩放 */
+        /* transform:scale(x, y); */
+        
+        h4 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin: 100px auto;
+            transition: all 0.6s;
+        }
+        
+        h4:hover {
+            /* 里面写的是数字可以是小数 不跟单位 代表倍数 */
+            /* 只放一个数字表示长宽同时变换的倍数 */
+            /* 优势 不会影响其他盒子 可以设置缩方的中心点 */
+            transform: scale(2, 1);
+        }
+        /* 综合写法 transform: translate() rotate() scale() */
+        
+        h5 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all 1s;
+        }
+        
+        h5:hover {
+            /* 添加多个转换时 添加顺序会影响转换效果 */
+            /* 当同时有位移和其他属性的时候 记得把位移放到最前面 */
+            transform: translate(50%, 50%) rotate(720deg) scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <h1></h1>
+    <h2>
+        <!-- <h3></h3> -->
+        <p></p>
+    </h2>
+
+    <img src="../../HTML/img/Snipaste_2021-07-12_16-34-14.png" alt="">
+
+    <h4></h4>
+    <h5></h5>
+</body>
+
+</html>

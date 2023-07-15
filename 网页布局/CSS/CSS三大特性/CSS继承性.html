@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 给div写样式 p会继承div的样式 */
+        /* 子标签会继承父标签的某些内容，与文字相关的一般都能继承 */
+        div {
+            color: pink;
+            /* font-size: 12px; */
+            /* 行高继承 */
+            /* 也可以用 font-size: 14px/1.5 形式 表示14*1.5个像素 */
+            /* font-size: 14px/25px; */
+            font-size: 14px/1.5;
+        }
+
+        /* p会继承div的行高 是16px的1.5倍 */
+        /* 1.5是动态调整行高，建议使用 */
+        p {
+            font-size: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>龙生龙，凤生凤，老鼠的儿子会打洞</span>
+        <p>龙生龙，凤生凤，老鼠的儿子会打洞</p>
+    </div>
+</body>
+
+</html>

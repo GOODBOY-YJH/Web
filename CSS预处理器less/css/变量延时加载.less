@@ -1,0 +1,41 @@
+
+@color:pink; // 使用@定义变量
+
+@m:margin;
+
+@selector:#warp;
+
+
+*{
+    @{m}: 0;
+    padding: 0;
+}
+
+
+// 这种注释不会被编译到css
+/*
+这种注释会编译到css
+*/
+@a:100;
+@{selector}{
+    @a:10;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid;
+    margin: 0 auto;
+    .inner{
+        @a:0;   // 延时加载
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: @a;
+        bottom: 0;
+        margin: auto;
+        background: @color;
+        height: 100px;
+        width: 100px;
+        @a:1; // 会加载这个而不是上面那个
+    }
+    bottom:@a;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>1</div>
+    <script>
+        var div = document.querySelector('div');
+        div.innerHTML = location.search.split('?')[1].split('=')[1];
+        // 上面也可以先用substr 再用split
+        // substr('起始的位置', [截取几个字符]) 默认为截取到最后
+    </script>
+</body>
+
+</html>
